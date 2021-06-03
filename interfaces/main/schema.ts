@@ -37,7 +37,7 @@ export default class Schema {
     return {
       _type: "user",
       id: Utils.create_id("user", name),
-      name: Utils.clean_name(name),
+      name: email,
       organization_ids: {},
       profile: {
         first_name: "",
