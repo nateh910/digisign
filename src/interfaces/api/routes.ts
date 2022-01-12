@@ -1,5 +1,12 @@
-const express = require('express')
+module.exports = function(express, impl){
+    
+    function _index(req, method, body) {
+        impl()
+    }
+    
+    express.post('/:method', function(req, res, next){
+        res.send(_index(req, req.method, req.body));
+    });
 
-let routes = {}
-
-export default routes
+    //other routes..
+}
